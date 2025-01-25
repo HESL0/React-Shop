@@ -1,6 +1,6 @@
 const blogs = [
-    { title: "5 Benefits of Herbal Teas", image: "/images/herbal-teas.png", link: "#" },
-    { title: "Essential Oils for Skin Care", image: "/images/essential-oils.png", link: "#" },
+    { title: "5 Benefits of Herbal Teas", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE_fPnEb-2Te00SCVV6T-waZvRUb8Vt2wv4g&s", link: "#" },
+    { title: "Essential Oils for Skin Care", image: "https://en.ohmycream.com/cdn/shop/collections/201705_Collection_Visage_378fee5a-cba7-44bd-9d5c-752d45d42f5a_grande.jpg?v=1614244957", link: "#" },
   ];
   
   export default function BlogSection() {

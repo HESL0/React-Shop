@@ -1,7 +1,7 @@
 const products = [
-    { name: "Aloe Vera Gel", price: "$12.99", image: "/images/aloe-vera-gel.png" },
-    { name: "Lavender Oil", price: "$8.99", image: "/images/lavender-oil.png" },
-    { name: "Chamomile Tea", price: "$6.99", image: "/images/chamomile-tea.png" },
+    { name: "Aloe Vera Gel", price: "$12.99", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2wrVdBEVluQOIax-LpWO9Spg8MrFWxMcZfw&s" },
+    { name: "Lavender Oil", price: "$8.99", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ3ousyYSWhT1cNnh6lOdxtD_clEpw6hsLcw&s" },
+    { name: "Chamomile Tea", price: "$6.99", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTwfn2G1w3dDnLjkMCyuqhQp4hv9MZneIihw&s" },
   ];
   
   export default function FeaturedProducts() {
