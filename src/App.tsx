@@ -1,11 +1,12 @@
 import NavBar from "./components/NavBar";
-import HeroBanner from "./components/HeroBanner"
+import Body from "./components/body/Body";
 
 function App() {
   return (
     <div>
       <NavBar />
-      <HeroBanner />
+   
+      <Body />
     </div>
   );
 }
