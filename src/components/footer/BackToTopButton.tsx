@@ -11,7 +11,7 @@ export default function BackToTopButton() {
 
       <button
         onClick={scrollToTop}
-        className="text-white hover:text-blue-700 "
+        className="text-white"
       >
         Back to Top
       </button>
