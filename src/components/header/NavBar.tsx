@@ -19,7 +19,10 @@ const NavBar = () => {
     <nav className="bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
-        <a href="/" className="text-2xl font-bold text-green-600 tracking-tight focus:outline-none focus:ring-2 focus:ring-green-500 rounded">
+        <a
+          href="/"
+          className="text-2xl font-bold text-green-600 tracking-tight focus:outline-none focus:ring-2 focus:ring-green-500 rounded"
+        >
           Herbal Shop
         </a>
 
@@ -35,11 +38,20 @@ const NavBar = () => {
 
         {/* User/Cart */}
         <div className="flex items-center space-x-4">
-          <a href="/cart" className="relative flex items-center focus:outline-none focus:ring-2 focus:ring-green-500 rounded" aria-label="Cart">
+          <a
+            href="/cart"
+            className="relative flex items-center focus:outline-none focus:ring-2 focus:ring-green-500 rounded"
+            aria-label="Cart"
+          >
             <img src="/cart.png" alt="Cart" className="w-6 h-6" />
-            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-1.5 py-0.5">3</span>
+            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-1.5 py-0.5 animate-pulse">
+              3
+            </span>
           </a>
-          <a href="/login" className="hidden sm:inline text-sm font-medium text-gray-700 hover:text-green-600 transition focus:outline-none focus:ring-2 focus:ring-green-500 rounded">
+          <a
+            href="/login"
+            className="hidden sm:inline text-sm font-medium text-gray-700 hover:text-green-600 transition focus:outline-none focus:ring-2 focus:ring-green-500 rounded"
+          >
             Sign In
           </a>
           <a
@@ -57,8 +69,20 @@ const NavBar = () => {
           aria-label="Open menu"
           aria-expanded={isMenuOpen}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-7 h-7 text-gray-700">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            className="w-7 h-7 text-gray-700 transition-transform duration-300"
+            style={{ transform: isMenuOpen ? "rotate(90deg)" : "rotate(0deg)" }}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
           </svg>
         </button>
       </div>
@@ -66,7 +90,7 @@ const NavBar = () => {
       {/* Desktop Nav */}
       <div className="hidden md:block border-t border-gray-100">
         <ul className="flex justify-center space-x-8 py-2 text-base font-medium text-gray-600">
-          {navLinks.map(link => (
+          {navLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
@@ -81,7 +105,9 @@ const NavBar = () => {
 
       {/* Mobile Nav Overlay */}
       <div
-        className={`fixed inset-0 bg-black bg-opacity-40 z-40 transition-opacity duration-300 ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+        className={`fixed inset-0 bg-black bg-opacity-40 z-40 transition-opacity duration-300 ${
+          isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
         onClick={() => setIsMenuOpen(false)}
         aria-hidden={!isMenuOpen}
       />
@@ -102,13 +128,19 @@ const NavBar = () => {
             onClick={() => setIsMenuOpen(false)}
             aria-label="Close menu"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 text-gray-700"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
         <ul className="flex flex-col space-y-4 px-6 py-6">
-          {navLinks.map(link => (
+          {navLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
@@ -120,7 +152,10 @@ const NavBar = () => {
             </li>
           ))}
           <hr className="my-2" />
-          <a href="/login" className="block text-base font-medium text-gray-700 hover:text-green-600 transition px-2 py-2 rounded focus:outline-none focus:ring-2 focus:ring-green-500">
+          <a
+            href="/login"
+            className="block text-base font-medium text-gray-700 hover:text-green-600 transition px-2 py-2 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
+          >
             Sign In
           </a>
           <a

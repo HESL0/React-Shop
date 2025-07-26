@@ -14,11 +14,16 @@ const HeroBanner = () => {
 
   return (
     <div className="relative w-full h-[450px] sm:h-[600px] overflow-hidden">
-      <img
-        src={images[currentImage]}
-        alt="Hero Banner"
-        className="w-full h-full object-cover"
-      />
+      {images.map((image, index) => (
+        <img
+          key={index}
+          src={image}
+          alt={`Hero Banner ${index + 1}`}
+          className={`w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 ease-in-out ${
+            currentImage === index ? "opacity-100 z-10" : "opacity-0 z-0"
+          }`}
+        />
+      ))}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-60"></div>
       <div className="absolute top-1/2 transform -translate-y-1/2 w-full text-center text-white px-6">
         <h1 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -29,7 +34,7 @@ const HeroBanner = () => {
         </p>
         <a
           href="/shop-now"
-          className="bg-green-600 px-6 py-3 rounded-md text-lg font-medium hover:bg-green-700"
+          className="bg-green-600 px-6 py-3 rounded-md text-lg font-medium hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 transition"
         >
           Shop Now
         </a>
@@ -42,6 +47,14 @@ const HeroBanner = () => {
             className={`w-4 h-4 rounded-full cursor-pointer ${
               currentImage === index ? "bg-white border border-green-500" : "bg-gray-500"
             }`}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                setCurrentImage(index);
+              }
+            }}
+            aria-label={`Select slide ${index + 1}`}
           />
         ))}
       </div>
