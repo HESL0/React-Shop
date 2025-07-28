@@ -1,4 +1,3 @@
-yes
 import { useState } from "react";
 
 interface Product {
@@ -15,6 +14,15 @@ export default function Cart() {
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
 
+
+  const removeFromCart = (productId: number) => {
+    setCartItems((prevItems) => prevItems.filter((item) => item.id !== productId));
+    setToastMessage(`Item removed from cart`);
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 3000);
+  };
+
+  // Added addToCart function to fix missing function error
   const addToCart = (product: Product) => {
     setCartItems((prevItems) => {
       const existing = prevItems.find((item) => item.id === product.id);
@@ -27,13 +35,6 @@ export default function Cart() {
       }
     });
     setToastMessage(`${product.name} added to cart`);
-    setShowToast(true);
-    setTimeout(() => setShowToast(false), 3000);
-  };
-
-  const removeFromCart = (productId: number) => {
-    setCartItems((prevItems) => prevItems.filter((item) => item.id !== productId));
-    setToastMessage(`Item removed from cart`);
     setShowToast(true);
     setTimeout(() => setShowToast(false), 3000);
   };
